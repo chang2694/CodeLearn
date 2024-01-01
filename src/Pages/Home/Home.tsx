@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SortDropDown from '../../components/SortDropDown/Sort';
 import Footer from '../../components/Footer/Footer';
 import Search from '../../components/Search/Search';

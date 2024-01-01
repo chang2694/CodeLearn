@@ -26,7 +26,6 @@ interface AnswerProps {
 
 const ForumPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useState("");
   const [post, setPost] = useState<ForumQuesProps>({
     title: "",
     author: "",
@@ -42,7 +41,7 @@ const ForumPage: React.FC = () => {
   useEffect(() => {
     if (id) {
       fetchData(id);
-      fetchComment(id);
+      fetchComment();
     }
   }, [id]);
 
@@ -99,7 +98,6 @@ const ForumPage: React.FC = () => {
 
       if (tokenCookie) {
         const tokenValue = tokenCookie.split("=")[1];
-        setToken(tokenValue);
 
         const formData = new URLSearchParams();
         formData.append("content", newForumAns);
@@ -135,7 +133,7 @@ const ForumPage: React.FC = () => {
     }
   };
 
-  const fetchComment = async (discussionId: string) => {
+  const fetchComment = async () => {
     try {
       const response = await fetch(
         `https://codelearn-api-72b30d70ca73.herokuapp.com/api/web/discussions/${id}/comments`,

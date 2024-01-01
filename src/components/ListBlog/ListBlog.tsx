@@ -64,7 +64,6 @@ const ListBlog: React.FC<ListBlogProps> = ({ option }) => {
       {Array.from({ length: 10 }).map((_, i) => (
         <LongBlog
           key={i}
-          id={blogs[i % blogs.length].id}
           title={blogs[i % blogs.length].title}
           body={blogs[i % blogs.length].body}
           url={blogs[i % blogs.length].url}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Blog from "../ShortBlog/Blog";
 import "./mostView.css";
 
@@ -97,7 +97,7 @@ const MostView = () => {
         />
       </div>
       <div className="mobileBlogs">
-        {blogs.map((blog, i) => (
+        {blogs.map((_blog, i) => (
           <span
             key={i}
             className={`dot ${i === index ? "active" : ""}`}

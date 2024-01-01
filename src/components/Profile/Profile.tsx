@@ -2,23 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./profile.css";
 import { Link } from "react-router-dom";
 
-interface ProfileProps {
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  password: string;
-  avatar: string;
-}
-
 const Profile = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [avatar, setAvatar] = useState('./src/assets/avatar.png');
-  const [token, setToken] = useState('');
   
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +18,6 @@ const Profile = () => {
   
         if (tokenCookie) {
           const tokenValue = tokenCookie.split('=')[1];
-          setToken(tokenValue);
   
           const response = await fetch("https://codelearn-api-72b30d70ca73.herokuapp.com/api/web/users", {
             method: "GET",
@@ -116,7 +104,6 @@ const Profile = () => {
   
         if (tokenCookie) {
           const tokenValue = tokenCookie.split('=')[1];
-          setToken(tokenValue);
         
       const formData = new URLSearchParams();
       formData.append("last_name", editedFields.lastName);

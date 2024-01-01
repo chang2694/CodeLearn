@@ -1,8 +1,6 @@
-import React from 'react'
 import './blog.css'
 
 interface Blog {
-  id: number;
   title: string;
   body: string;
   img: string;
@@ -10,7 +8,7 @@ interface Blog {
   url: string;
 }
 
-const LongBlog = ({id, title, body, img, date, url}: Blog) => {
+const LongBlog = ({title, body, img, date, url}: Blog) => {
   const maxLength = 200;
   let text = '';
   if (body.length < maxLength){

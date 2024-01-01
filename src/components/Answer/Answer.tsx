@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -10,7 +10,6 @@ const Answer = () => {
 
   const [editorState, setEditorState] = useState("");
   const nav = useNavigate();
-  const [token, setToken] = useState("");
 
   const handleEditorChange = (value: string) => {
     setEditorState(value);
@@ -36,7 +35,6 @@ const Answer = () => {
 
       if (tokenCookie) {
         const tokenValue = tokenCookie.split("=")[1];
-        setToken(tokenValue);
 
         const formData = new URLSearchParams();
         formData.append("id", id.toString());

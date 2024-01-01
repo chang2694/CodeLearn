@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import SignIn from "./Pages/SignIn/SignIn";
 import Home from "./Pages/Home/Home";
@@ -23,15 +23,15 @@ const App = () => {
         <Route path="/profile" element={<ChangeProfile />} />
         <Route path="/change_avatar" element={<UploadAvatar />} />
         <Route path="/answer/:id" element={<Answer />} />
-        <Route path="/topic" element={<TopicPage />} />
+        <Route path="/topic" element={<TopicPage option="mostView"/>} />
         <Route path="/forum" element={<ForumPage />} />
         {/* <Route path="/admin" element={<Admin />} /> */}
-        <Route path="/question/:id"element={<Question option="id"/>} />
-        <Route path="/ask" element={<Question option="addQuestion"/>} />
+        <Route path="/question/:id"element={<Question/>} />
+        <Route path="/ask" element={<Question/>} />
 
         <Route path="/article/:id" element={<PaperPage />} />
         <Route path="/forum/:id" element={<ForumPage />} />
-        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );

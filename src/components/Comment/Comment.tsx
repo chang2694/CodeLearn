@@ -1,4 +1,3 @@
-// Comment.tsx
 import React, { useEffect, useState } from "react";
 import "./Comment.css";
 
@@ -11,10 +10,7 @@ interface CommentProps {
 
 const Comment: React.FC<CommentProps> = ({ id }) => {
   const [comments, setComments] = useState<CommentProps[]>([]);
-  const [avatar, setAvatar] = useState("");
-  const [initialLike, setInitialLike] = useState(0);
   const [commentCount, setCommentCount] = useState(0);
-  const [token, setToken] = useState("");
 
   useEffect(() => {
     fetch(
@@ -53,7 +49,7 @@ const Comment: React.FC<CommentProps> = ({ id }) => {
   }, []);
 
   const maxLength = 200;
-  const [like, setLike] = useState(initialLike);
+  const [like, setLike] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const [newComment, setNewComment] = useState("");
 
@@ -83,7 +79,6 @@ const Comment: React.FC<CommentProps> = ({ id }) => {
 
       if (tokenCookie) {
         const tokenValue = tokenCookie.split("=")[1];
-        setToken(tokenValue);
 
         const formData = new URLSearchParams();
         formData.append("content", newComment);

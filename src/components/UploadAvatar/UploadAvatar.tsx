@@ -6,7 +6,6 @@ import "./uploadAvatar.css";
 import { Link } from "react-router-dom";
 
 const UploadAvatar: React.FC = () => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const cropperRef = useRef<ReactCropperElement>(null);
   const uploadLeftRef = useRef<HTMLDivElement>(null);
@@ -16,7 +15,6 @@ const UploadAvatar: React.FC = () => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
-      setSelectedFile(file);
 
       const imageUrl = URL.createObjectURL(file);
       setImageSrc(imageUrl);
@@ -59,7 +57,6 @@ const UploadAvatar: React.FC = () => {
       const reader = new FileReader();
 
       reader.onload = (event) => {
-        setSelectedFile(file);
         setImageSrc(event.target?.result as string);
       };
 

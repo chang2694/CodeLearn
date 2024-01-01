@@ -16,7 +16,6 @@ function Account({ avatar, username }: HeaderProps) {
     );
   };
   const nav = useNavigate();
-  const [token, setToken] = useState("");
 
   const SignOut = async () => {
     try {
@@ -29,7 +28,6 @@ function Account({ avatar, username }: HeaderProps) {
 
       if (tokenCookie) {
         const tokenValue = tokenCookie.split("=")[1];
-        setToken(tokenValue);
 
         const response = await fetch(
           "https://codelearn-api-72b30d70ca73.herokuapp.com/api/web/sessions/sign_out",

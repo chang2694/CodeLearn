@@ -20,7 +20,7 @@ interface ChatMessage {
 }
 
 function ChatGPT(): ReactElement {
-
+  const API_KEY = process.env.API_KEY;
   const [chat, setChat] = useState("hiddenChat");
   const [app, setApp] = useState("hiddenApp");
 
@@ -101,16 +101,10 @@ function ChatGPT(): ReactElement {
         });
 }
 
-
-  const [msgType, setMsgType] = useState<MessageType>("text"); 
-
   const messageType = (sender: string): MessageType => {
     return sender === "user" ? "text" : "custom";
   };
-  
-  const direction = (sender: string) =>{
-    return sender === "user" ? 'incoming': 'outgoing';
-  };
+
 
   return (
     <div
