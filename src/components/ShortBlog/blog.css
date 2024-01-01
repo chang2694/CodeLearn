@@ -1,0 +1,43 @@
+.ShortBlog{
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.ShortBlog img{
+  border-radius: 15px;
+}
+
+.ShortBlog .content{
+  /* width: 21.5vw; */
+  margin: 3% 3% 3% 3%;
+  color: black;
+}
+
+.ShortBlog .header{
+  background: linear-gradient(to bottom, #0B1354, #F765A3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 10px;
+}
+
+.ShortBlog .title{
+  color: transparent;
+  font-size: 1.5em;
+}
+
+.ShortBlog .date{
+  font-style: italic;
+  /* color: #F765A3; */
+}
+
+.ShortBlog .text{
+  padding-bottom: 10px;
+}
+
+.ShortBlog .see_more{
+  color: #0B1354;
+  font-weight: bold;
+}
