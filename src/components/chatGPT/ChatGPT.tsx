@@ -20,7 +20,6 @@ interface ChatMessage {
 }
 
 function ChatGPT(): ReactElement {
-  const API_KEY = process.env.API_KEY;
   const [chat, setChat] = useState("hiddenChat");
   const [app, setApp] = useState("hiddenApp");
 
