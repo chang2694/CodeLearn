@@ -11,7 +11,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-// const API_KEY: string = "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";
+const API_KEY: string = "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";
 
 interface ChatMessage {
   message: string;
